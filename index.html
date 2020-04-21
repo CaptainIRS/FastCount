@@ -1,0 +1,198 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/material-components-web@3.2.0/dist/material-components-web.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/material-components-web@3.2.0/dist/material-components-web.min.js"></script>
+  <script src="js/main.js"></script>
+
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+
+<div class="game_container">
+
+  <div id="game-over-dialog" class="mdc-dialog">
+    <div class="mdc-dialog__container">
+      <div class="mdc-dialog__surface"
+           role="alertdialog"
+           aria-modal="true"
+           aria-labelledby="my-dialog-title"
+           aria-describedby="my-dialog-content"
+           style="background-color: #555555">
+        <h2 class="mdc-dialog__title" id="game-over-dialog-title" style="color: #C0FFC0">
+        </h2>
+        <div class="mdc-dialog__content" id="game-over-dialog-message" style="color: #FFFFFF">
+          Game Over!
+        </div>
+        <footer class="mdc-dialog__actions">
+          <button id="game-over-retry-dialog-button" type="button" class="mdc-button mdc-dialog__button"
+                  data-mdc-dialog-action="ok">
+            <div class="mdc-button__ripple"></div>
+            <span class="mdc-button__label" style="color: darkgreen">RETRY</span>
+          </button>
+          <button id="game-over-close-dialog-button" type="button" class="mdc-button mdc-dialog__button"
+                  data-mdc-dialog-action="ok">
+            <div class="mdc-button__ripple"></div>
+            <span class="mdc-button__label" style="color: darkgreen">CLOSE</span>
+          </button>
+        </footer>
+      </div>
+    </div>
+    <div class="mdc-dialog__scrim"></div>
+  </div>
+
+  <div id="select-mode-dialog" class="mdc-dialog">
+    <div class="mdc-dialog__container">
+      <div class="mdc-dialog__surface"
+           role="alertdialog"
+           aria-modal="true"
+           aria-labelledby="my-dialog-title"
+           aria-describedby="my-dialog-content"
+           style="background-color: #555555">
+        <h2 class="mdc-dialog__title" id="select-mode-dialog-title" style="color: #C0FFC0">
+          Welcome!
+        </h2>
+        <div class="mdc-dialog__content" id="select-mode-dialog-message" style="color: #FFFFFF">
+          Select mode and play...
+        </div>
+        <footer class="mdc-dialog__actions">
+          <button id="select-mode-dialog-button" type="button" class="mdc-button mdc-dialog__button"
+                  data-mdc-dialog-action="ok">
+            <div class="mdc-button__ripple"></div>
+            <span class="mdc-button__label" style="color: darkgreen">OK</span>
+          </button>
+        </footer>
+      </div>
+    </div>
+    <div class="mdc-dialog__scrim"></div>
+  </div>
+
+  <div id="win-dialog" class="mdc-dialog">
+    <div class="mdc-dialog__container">
+      <div class="mdc-dialog__surface"
+           role="alertdialog"
+           aria-modal="true"
+           aria-labelledby="my-dialog-title"
+           aria-describedby="my-dialog-content"
+           style="background-color: #555555">
+        <h2 class="mdc-dialog__title" id="win-dialog-title" style="color: #C0FFC0">
+          Hurray!
+        </h2>
+        <div class="mdc-dialog__content" id="win-dialog-message" style="color: #FFFFFF">
+          You won!
+        </div>
+        <footer class="mdc-dialog__actions">
+          <button id="win-dialog-play-button" type="button" class="mdc-button mdc-dialog__button"
+                  data-mdc-dialog-action="ok">
+            <div class="mdc-button__ripple"></div>
+            <span class="mdc-button__label" style="color: darkgreen">PLAY AGAIN</span>
+          </button>
+          <button id="win-dialog-close-button" type="button" class="mdc-button mdc-dialog__button"
+                  data-mdc-dialog-action="ok">
+            <div class="mdc-button__ripple"></div>
+            <span class="mdc-button__label" style="color: darkgreen">CLOSE</span>
+          </button>
+        </footer>
+      </div>
+    </div>
+    <div class="mdc-dialog__scrim"></div>
+  </div>
+
+
+  <div id="game_header" class="game_header">
+
+    <div id="title" class="title">
+      <img src="logo.png" alt="Logo" width="50px" height="auto">
+    </div>
+
+    <div id="combo" class="combo mdc-select">
+      <input type="hidden" name="enhanced-select">
+      <i class="mdc-select__dropdown-icon"></i>
+      <div class="mdc-select__selected-text"></div>
+      <div class="mdc-select__menu mdc-menu mdc-menu-surface demo-width-class">
+        <ul class="mdc-list">
+          <li class="mdc-list-item mdc-list-item--selected" data-value="" aria-selected="true"></li>
+          <li class="mdc-list-item" data-value="normal">
+            Normal
+          </li>
+          <li class="mdc-list-item" data-value="hacker">
+            Hacker
+          </li>
+          <li class="mdc-list-item" data-value="hackerplus">
+            Hacker+
+          </li>
+          <li class="mdc-list-item" data-value="hackerplusplus">
+            Hacker++
+          </li>
+          <li class="mdc-list-item" data-value="hackerplusplusplus">
+            Hacker+++
+          </li>
+        </ul>
+      </div>
+      <span class="mdc-floating-label">Select mode:</span>
+      <div class="mdc-line-ripple"></div>
+    </div>
+
+    <div id="time_group" class="time">
+      <div style="font-family: 'Roboto', sans-serif; font-size: 16px;">TIME</div>
+      <div id="time"></div>
+    </div>
+
+    <div id="best_time_group" class="best_time">
+      <div style="font-family: 'Roboto', sans-serif; font-size: 16px;">BEST TIME</div>
+      <div id="best_time"></div>
+    </div>
+
+    <div class="instructions">
+      Click the <b>numbers</b> as quickly as you can
+    </div>
+
+    <div class="new_game mdc-button mdc-button--raised mdc-ripple-surface" onclick="reset(null)">
+      New Game
+    </div>
+
+  </div>
+
+  <div id="game_area" class="game_area">
+
+    <div id="game_board" class="game_board">
+
+    </div>
+
+  </div>
+
+  <div id="hacker_plus_container">
+
+  </div>
+
+  <script>
+    mdc.ripple.MDCRipple.attachTo(document.querySelector('.new_game'));
+    const select = new mdc.select.MDCSelect(document.querySelector('#combo'));
+
+    select.listen('MDCSelect:change', () => {
+      reset(select.selectedIndex);
+    });
+
+    const mode_dialog = new mdc.dialog.MDCDialog(document.querySelector('#select-mode-dialog'));
+    mode_dialog.open();
+
+    const game_over_dialog = new mdc.dialog.MDCDialog(document.querySelector('#game-over-dialog'));
+    const win_dialog = new mdc.dialog.MDCDialog(document.querySelector('#win-dialog'));
+
+  </script>
+
+</div>
+
+</body>
+
+</html>

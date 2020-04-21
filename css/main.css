@@ -1,0 +1,295 @@
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #555555;
+}
+
+.mdc-button {
+  background-color: #C0FFC0 !important;
+}
+
+.mdc-select {
+  background-color: #444444 !important;
+}
+
+.mdc-select__selected-text {
+  color: #C0FFC0 !important;
+}
+
+.mdc-select--focused .mdc-select__dropdown-icon {
+  background: url("data:image/svg+xml,%3Csvg%20width%3D%2210px%22%20height%3D%225px%22%20viewBox%3D%227%2010%2010%205%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Cpolygon%20id%3D%22Shape%22%20stroke%3D%22none%22%20fill%3D%22%23C0FFC0%22%20fill-rule%3D%22evenodd%22%20opacity%3D%220.54%22%20points%3D%227%2010%2012%2015%2017%2010%22%3E%3C%2Fpolygon%3E%0A%3C%2Fsvg%3E"), no-repeat center !important;
+  background-position-x: center !important;
+  background-position-y: center !important;
+  background-repeat: no-repeat !important;
+}
+
+.mdc-select .mdc-select__dropdown-icon {
+  background: url("data:image/svg+xml,%3Csvg%20width%3D%2210px%22%20height%3D%225px%22%20viewBox%3D%227%2010%2010%205%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Cpolygon%20id%3D%22Shape%22%20stroke%3D%22none%22%20fill%3D%22%23C0FFC0%22%20fill-rule%3D%22evenodd%22%20opacity%3D%220.54%22%20points%3D%227%2010%2012%2015%2017%2010%22%3E%3C%2Fpolygon%3E%0A%3C%2Fsvg%3E"), no-repeat center !important;
+  background-position-x: center !important;
+  background-position-y: center !important;
+  background-repeat: no-repeat !important;
+}
+
+.mdc-select:not(.mdc-select--disabled) .mdc-select__native-control, .mdc-select:not(.mdc-select--disabled) .mdc-select__selected-text {
+  border-bottom-color: #C0FFC0 !important;
+}
+
+.mdc-line-ripple {
+  background-color: #C0FFC0 !important;
+}
+
+.mdc-floating-label {
+  color: #C0FFC0 !important;
+}
+
+.mdc-list-item {
+  color: #C0FFC0 !important;
+}
+
+.mdc-list {
+  background-color: #555555 !important;
+}
+
+.game_header {
+  display: grid;
+  grid-template-areas: 'title        combo        time     best_time' 'instructions instructions new_game new_game';
+  grid-gap: 5px;
+  background-color: #555555;
+  padding: 10px;
+}
+
+.game_header > .combo {
+  grid-area: combo;
+}
+
+.game_header > .title {
+  grid-area: title;
+}
+
+.time_group {
+  min-width: 80px;
+  color: white;
+  grid-area: time;
+  background-color: #444444;
+  text-align: center;
+}
+
+.time {
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  min-width: 70px;
+  color: white;
+  background-color: #444444;
+  text-align: center;
+}
+
+.best_time {
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  color: white;
+  background-color: #444444;
+  text-align: center;
+}
+
+.best_time_group {
+  color: white;
+  grid-area: best_time;
+  background-color: #444444;
+  text-align: center;
+}
+
+.instructions {
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  color: #C0FFC0;
+  grid-area: instructions;
+  background-color: #444444;
+}
+
+.game_header > .new_game {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  color: green;
+  grid-area: new_game;
+  background-color: #FFFFFF;
+  text-align: center;
+}
+
+.game_area {
+  display: block;
+  position: relative;
+  left: 50%;
+  margin-left: -250px;
+  width: 500px;
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.game_board {
+  alignment: center;
+  display: grid;
+  grid-template-rows: repeat(4, 125px);
+}
+
+.hacker_plus_container {
+  display: block;
+  position: relative;
+  left: 50%;
+  margin-left: -250px;
+  width: 500px;
+  height: 1000px;
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 250px;
+}
+
+
+.cube {
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -250px;
+  margin-left: -250px;
+  transform-style: preserve-3d;
+  transform-origin: 50% 50%;
+  transition: transform 1s;
+  animation: cube_animation 30s linear infinite;
+}
+
+.cube-face {
+  position: absolute;
+  background-color: #202020;
+  width: 500px;
+  height: 500px;
+}
+
+.cube-front {
+  border: #000000 4px solid;
+}
+
+.cube-right {
+  border: #000000 4px solid;
+}
+
+.cube-back {
+  border: #000000 4px solid;
+}
+
+.cube-left {
+  border: #000000 4px solid;
+}
+
+.cube-top {
+  border: #000000 4px solid;
+}
+
+.cube-bottom {
+  border: #000000 4px solid;
+}
+
+.cube-front {
+  transform: rotateY(0deg) translateZ(250px);
+}
+
+.cube-right {
+  transform: rotateY(90deg) translateZ(250px);
+}
+
+.cube-back {
+  transform: rotateY(180deg) translateZ(250px);
+}
+
+.cube-left {
+  transform: rotateY(-90deg) translateZ(250px);
+}
+
+.cube-top {
+  transform: rotateX(90deg) translateZ(250px);
+}
+
+.cube-bottom {
+  transform: rotateX(-90deg) translateZ(250px);
+}
+
+@keyframes cube_animation {
+  0% {
+    transform: translateZ(-500px) rotateY(-90deg);
+  }
+  20% {
+    transform: translateZ(-500px) rotateX(-90deg);
+  }
+  40% {
+    transform: translateZ(-500px) rotateY(90deg);
+  }
+  60% {
+    transform: translateZ(-500px) rotateX(90deg)
+  }
+  80% {
+    transform: translateZ(-500px) rotateY(-90deg);
+  }
+  100% {
+    transform: translateZ(-500px) rotateX(-90deg);
+  }
+}
+
+.tile {
+  font-family: 'Roboto', sans-serif;
+  color: #C0FFC0 !important;
+  display: inline-block;
+  line-height: 125px;
+  width: 100px;
+  height: 125px;
+  font-size: 35px;
+  border: #000000 2px solid;
+  border-radius: 20px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee1 {
+  display: inline-block;
+  will-change: transform;
+  animation: marquee1 16s linear infinite;
+}
+
+.marquee2 {
+  display: inline-block;
+  will-change: transform;
+  animation: marquee2 16s linear infinite;
+  animation-delay: 8s;
+}
+
+@keyframes marquee1 {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee2 {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-200%);
+  }
+}
