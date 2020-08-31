@@ -1,6 +1,6 @@
-# Delta WebDev Task 1
+# FastCount
 
-Play the game online at https://captainirs.github.io/CaptainIRS-DeltaWebDevT1/
+Play the game online at https://captainirs.github.io/FastCount/
 
 *Available for Desktop and Tablet form factors only*
 
